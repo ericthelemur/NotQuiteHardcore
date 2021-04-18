@@ -1,7 +1,9 @@
+tellraw @a [{"text":"Reviving ","bold": true, "color": "dark_red"},{"selector":"@s","bold": true, "color": "dark_red"}]
+scoreboard players operation cost res_values *= mult res_values
 
 particle cloud ~ ~ ~ 0 0 0 0.5 100 force
 particle minecraft:totem_of_undying ~ ~ ~ 0 0 0 0.75 500 force
-playsound minecraft:item.totem.use player @a ~ ~ ~ 10
+playsound minecraft:item.totem.use player @a ~ ~ ~ 1
 
 gamemode survival @s
 tag @s remove res_reviving
