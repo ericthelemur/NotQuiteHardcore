@@ -6,4 +6,4 @@ playsound minecraft:item.totem.use player @a ~ ~ ~ 10
 gamemode survival @s
 tag @s remove res_reviving
 
-tellraw @a [{"text":"Resurrection now costs ","bold": true, "color": "dark_red"},{"score":{"name":"cost","objective":"res_cost"},"bold": true, "color": "dark_red"},{"text":" diamonds.","bold": true, "color": "dark_red"}]
+tellraw @a [{"text":"Resurrection now costs ","bold": true, "color": "dark_red"},{"score":{"name":"cost","objective":"res_values"},"bold": true, "color": "dark_red"},{"text":" diamonds.","bold": true, "color": "dark_red"}]
