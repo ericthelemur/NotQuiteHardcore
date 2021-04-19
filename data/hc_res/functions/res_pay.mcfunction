@@ -9,13 +9,21 @@ execute if score @s res_cost < cost res_values run tellraw @a [{"text":"Not enou
 
 # If player has cost, tag nearest dead (spectating) player for revival 
 execute if score @s res_cost >= cost res_values run tag @a[gamemode=spectator,limit=1,sort=nearest] add res_reviving
+# start anim
+execute if score @s res_cost >= cost res_values if entity @a[tag=res_reviving] run function hc_res:anim/init
 # Take the cost from their score
 execute if score @s res_cost >= cost res_values run scoreboard players operation @s res_cost -= cost res_values
+
 
 
 # Return diamonds (for both branches)
 execute if score @s res_cost > zero res_values run function hc_res:return_cost
 
+
+execute if entity @a[tag=res_reviving] run tellraw @a [{"text":"Reviving ","bold": true, "color": "dark_red"},{"selector":"@a[tag=res_reviving]","bold": true, "color": "dark_red"}]
+execute if entity @a[tag=res_reviving] run scoreboard players operation cost res_values *= mult res_values
+
+
 # Revive the dead player
-execute if entity @a[tag=res_reviving] run tp @a[tag=res_reviving] @s
-execute if entity @a[tag=res_reviving] as @a[tag=res_reviving] run function hc_res:res
+# execute if entity @a[tag=res_reviving] run tp @a[tag=res_reviving] @s
+# execute if entity @a[tag=res_reviving] as @a[tag=res_reviving] run function hc_res:res
