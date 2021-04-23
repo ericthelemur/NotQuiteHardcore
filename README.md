@@ -11,4 +11,4 @@ There is also a special resurrection spell effect, but that can stay as a surpri
 ## Usage
 To trigger a revive, be holding at least the required number of diamonds and run `/trigger resurrect`
 
-To reset the cost, delete the scoreboard `res_values`.
+To reset the cost, delete the scoreboard `nqh_values`.
